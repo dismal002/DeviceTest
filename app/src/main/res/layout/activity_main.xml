@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/ScrollView" android:background="#ff122428" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/test_languagechange" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/but_languagechange"/>
+            <TextView android:textSize="18dp" android:id="@+id/auto_test_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_autotesting" android:layout_weight="1"/>
+        </LinearLayout>
+        <View android:background="@color/gray" android:layout_width="match_parent" android:layout_height="3dp"/>
+        <Button android:textSize="25dp" android:id="@+id/test_all" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:text="@string/but_test_all" style="@style/main_button_style"/>
+        <View android:background="@color/gray" android:layout_width="match_parent" android:layout_height="3dp"/>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/main_buttons_linearlayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp">
+            <Button android:id="@+id/test_version" android:text="@string/but_test_version" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_color" android:text="@string/but_test_color" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_touchpanel" android:text="@string/but_test_touchpanel" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_gps" android:text="@string/but_test_gps" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_sd" android:text="@string/but_test_sd" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_flashlight" android:text="@string/but_test_flashlight" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_camera" android:text="@string/but_test_camera" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_wifi" android:text="@string/but_test_wifi" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_bluetooth" android:text="@string/but_test_bluetooth" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_backlight" android:text="@string/but_test_backlight" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_power" android:text="@string/but_test_power" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_keyboard" android:text="@string/but_test_keyboard" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_earphone" android:text="@string/but_test_earphone" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_fm" android:text="@string/but_test_fm" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_vibrate" android:text="@string/but_test_vibrate" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_gravity_sensor" android:text="@string/but_test_gravity_sensor" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_light_sensor" android:text="@string/but_test_light_sensor" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_distance_sensor" android:text="@string/but_test_distance_sensor" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_sim" android:text="@string/but_test_sim" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_speaker" android:text="@string/but_test_speaker" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_headset" android:text="@string/but_test_headset" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_mic" android:text="@string/but_test_mic" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_phone" android:text="@string/but_test_phone" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_signal" android:text="@string/but_test_signal" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_imei" android:text="@string/but_test_imei" style="@style/main_button_style"/>
+            <Button android:id="@+id/test_factoryreset" android:text="@string/but_factoryreset" style="@style/main_button_style"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

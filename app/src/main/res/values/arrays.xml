@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="led_color_array">
+        <item>#0000ff</item>
+        <item>#0000ff</item>
+        <item>#0000ff</item>
+        <item>#ff0000</item>
+        <item>#ff0000</item>
+        <item>#00ff00</item>
+        <item>#00ff00</item>
+        <item>#ff00ff</item>
+        <item>#ff00ff</item>
+        <item>#ffff00</item>
+        <item>#ffff00</item>
+        <item>#ff00ff</item>
+        <item>#ff00ff</item>
+        <item>#00ffff</item>
+        <item>#00ffff</item>
+    </array>
+    <array name="led_name_array">
+        <item>leds_efficacy</item>
+        <item>blue led1</item>
+        <item>blue led2</item>
+        <item>red led1</item>
+        <item>red led2</item>
+        <item>green led1</item>
+        <item>green led2</item>
+        <item>pink led1</item>
+        <item>pink led2</item>
+        <item>yellow led1</item>
+        <item>yellow led2</item>
+        <item>cyan led1</item>
+        <item>cyan led2</item>
+        <item>pink led1</item>
+        <item>pink led2</item>
+    </array>
+</resources>

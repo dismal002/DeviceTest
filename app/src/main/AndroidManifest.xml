@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dismal.devicetest">
+
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="false" />
+
+    <application
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:allowBackup="true"
+        android:extractNativeLibs="false"
+        android:usesNonSdkApi="true">
+        
+        <activity
+            android:theme="@style/AppTheme"
+            android:label="@string/app_name"
+            android:name="com.dismal.devicetest.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <receiver 
+            android:name="com.dismal.devicetest.FactoryReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.dismal.devicetest.switchlanguage" />
+            </intent-filter>
+        </receiver>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestVersion"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testversion" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestColor"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testcolor" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.dismal.devicetest.TestTouchPanel"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testtouchpannel" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:theme="@style/AppTheme"
+            android:name="com.dismal.devicetest.TestTouchPanelGrid"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testtouchpannelgrid" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestGPS2"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale|orientation">
+            <intent-filter>
+                <action android:name="com.devicetest.testgps" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestSDcard"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testsdcard" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestFlashLight"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testflashlight" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestCamera"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testcamera" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestWifi"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testwifi" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestBluetooth"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testbluetooth" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestBacklight"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testbacklight" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestBattery"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testbattery" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestKeyboard"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testkeyboard" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestEarphone"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testearphone" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestFMRadio"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testfmradio" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestVibrate"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testvibrate" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestSensor"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testsensor" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestSound"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testspeaker" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestSIM"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testsim" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestPhone"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testphone" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestMic"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testmic" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestSignal"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testsignalstrength" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestLED"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testled" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestNFC"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testnfc" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestOTG"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.test_otg" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.TestCompassActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.devicetest.testcompass" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.Imageflowadjust"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.dismal.devicetest.LedsTestActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="com.devicetest.testrgbleds" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+
+        
+
+        
+        <activity
+            android:theme="@style/Theme.Black"
+            android:label="@string/TouchScreen_HandWriting"
+            android:name="com.dismal.devicetest.TsHandWriting"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name="com.dismal.devicetest.SimpleSoundRecorderActivity"
+            android:theme="@style/Theme.Black"
+            android:label="@string/sound_recorder_title"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <SurfaceView android:gravity="center_horizontal" android:id="@+id/surfaceview" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1">
+                <Button android:textSize="20dp" android:id="@+id/capture_button" android:layout_width="100dp" android:layout_height="wrap_content" android:text="@string/test_camera_capture"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1">
+                <RadioGroup android:orientation="vertical" android:id="@+id/cameraGroup" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <RadioButton android:textSize="18dp" android:id="@+id/back_cam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/test_camera_backcamera"/>
+                    <RadioButton android:textSize="18dp" android:id="@+id/front_cam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_camera_frontcamera"/>
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
+                <ImageView android:id="@+id/picture_view" android:background="#ff525252" android:layout_width="60dp" android:layout_height="90dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <com.android.factorywidget.TestConfirm android:id="@+id/cam_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

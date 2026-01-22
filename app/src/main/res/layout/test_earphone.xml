@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <TextView android:textSize="25dp" android:gravity="center" android:id="@+id/earphone_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/test_earphone_testing"/>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/earphone_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

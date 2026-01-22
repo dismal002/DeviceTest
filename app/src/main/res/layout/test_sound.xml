@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <TextView android:textSize="25dp" android:id="@+id/snd_test_type" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:textSize="25dp" android:id="@+id/snd_ask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sound_ask"/>
+        <TextView android:textSize="25dp" android:id="@+id/snd_earphone_info" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/snd_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

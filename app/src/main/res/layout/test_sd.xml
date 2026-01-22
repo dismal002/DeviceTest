@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <TextView android:id="@+id/test_phonecard_status" style="@style/sd_text"/>
+        <TextView android:id="@+id/test_phonecard_detail" style="@style/sd_text"/>
+        <TextView android:id="@+id/test_sd_status" style="@style/sd_text"/>
+        <TextView android:id="@+id/test_sd_detail" style="@style/sd_text"/>
+        <EditText android:textSize="12sp" android:id="@+id/test_sd_edit" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/test_sd_write" android:maxLength="512"/>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/btn_hor_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@+id/test_sd_btn_save" android:layout_width="80dp" android:layout_height="wrap_content" android:text="@string/test_sd_save"/>
+            <Button android:id="@+id/test_sd_btn_display" android:layout_width="80dp" android:layout_height="wrap_content" android:text="@string/test_sd_show"/>
+            <Button android:id="@+id/test_sd_btn_del" android:layout_width="80dp" android:layout_height="wrap_content" android:text="@string/test_sd_delete"/>
+        </LinearLayout>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/sdcard_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <EditText android:textSize="30dp" android:id="@+id/phone_edit" android:layout_width="match_parent" android:layout_height="70dp" android:text="@string/test_phone_10086" android:phoneNumber="true"/>
+        <View android:layout_width="match_parent" android:layout_height="10dp"/>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:textSize="20dp" android:id="@+id/phone_10086" android:layout_width="0dp" android:layout_height="60dp" android:text="@string/test_phone_10086" android:layout_weight="1"/>
+            <Button android:textSize="20dp" android:id="@+id/phone_10010" android:layout_width="0dp" android:layout_height="60dp" android:text="@string/test_phone_10010" android:layout_weight="1"/>
+            <Button android:textSize="20dp" android:id="@+id/phone_112" android:visibility="gone" android:layout_width="0dp" android:layout_height="60dp" android:text="@string/test_phone_112" android:layout_weight="1"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="10dp"/>
+        <Button android:textSize="20dp" android:id="@+id/phone_dial_sim1" android:layout_width="match_parent" android:layout_height="60dp" android:text="@string/test_phone_dial_sim1"/>
+        <Button android:textSize="20dp" android:id="@+id/phone_dial_sim2" android:layout_width="match_parent" android:layout_height="60dp" android:text="@string/test_phone_dial_sim2"/>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/phone_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

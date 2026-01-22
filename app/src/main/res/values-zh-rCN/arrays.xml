@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="led_color_array">
+        <item>#0000ff</item>
+        <item>#0000ff</item>
+        <item>#0000ff</item>
+        <item>#ff0000</item>
+        <item>#ff0000</item>
+        <item>#00ff00</item>
+        <item>#00ff00</item>
+        <item>#ff00ff</item>
+        <item>#ff00ff</item>
+        <item>#ffff00</item>
+        <item>#ffff00</item>
+        <item>#ff00ff</item>
+        <item>#ff00ff</item>
+        <item>#00ffff</item>
+        <item>#00ffff</item>
+    </array>
+    <array name="led_name_array">
+        <item>灯效演示</item>
+        <item>蓝灯1</item>
+        <item>蓝灯2</item>
+        <item>红灯1</item>
+        <item>红灯2</item>
+        <item>绿灯1</item>
+        <item>绿灯2</item>
+        <item>粉灯1</item>
+        <item>粉灯2</item>
+        <item>黄灯1</item>
+        <item>黄灯2</item>
+        <item>青灯1</item>
+        <item>青灯2</item>
+        <item>粉灯1</item>
+        <item>粉灯2</item>
+    </array>
+</resources>

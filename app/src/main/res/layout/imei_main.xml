@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/sim1_old_layout" android:paddingTop="20px" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="32px" android:id="@+id/sim1_old_label" android:padding="@dimen/padding_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sim1_old_labelstr"/>
+        <TextView android:textSize="32px" android:textColor="#ff000000" android:id="@+id/sim1_old_imei" android:background="#ffb0b0b0" android:padding="@dimen/padding_medium" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/sim1_new_layout" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="32px" android:textColor="#ffee0000" android:id="@+id/sim1_new_label" android:padding="@dimen/padding_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sim1_new_labelstr"/>
+        <EditText android:textSize="32px" android:id="@+id/sim1_new_imei" android:padding="@dimen/padding_medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:lines="1" android:maxLength="15" android:numeric="integer"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/sim2_old_layout" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="32px" android:id="@+id/sim2_old_label" android:padding="@dimen/padding_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sim2_old_labelstr"/>
+        <TextView android:textSize="32px" android:textColor="#ff000000" android:id="@+id/sim2_old_imei" android:background="#ffb0b0b0" android:padding="@dimen/padding_medium" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/sim2_new_layout" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="32px" android:textColor="#ffee0000" android:id="@+id/sim2_new_label" android:padding="@dimen/padding_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sim2_new_labelstr"/>
+        <EditText android:textSize="32px" android:id="@+id/sim2_new_imei" android:padding="@dimen/padding_medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:lines="1" android:maxLength="15" android:numeric="integer"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="#ffa5a5a5" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20px">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/imei1btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/write_imei1" android:layout_weight="1"/>
+            <Button android:id="@+id/imei2btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/write_imei2" android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/readbtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/read_imei" android:layout_weight="1"/>
+            <Button android:id="@+id/exitbtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/imei_exit" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

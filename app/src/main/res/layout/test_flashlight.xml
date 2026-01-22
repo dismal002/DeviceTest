@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <TextView android:textSize="25dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:text="@string/test_flashlight_test"/>
+        <Button android:textSize="25dp" android:id="@+id/toggleFlashlight" android:layout_width="200dp" android:layout_height="60dp" android:layout_marginTop="10dp" android:text="@string/test_flashlight_close"/>
+        <LinearLayout android:gravity="center" android:id="@+id/flashlight_btnview" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:textSize="25dp" android:id="@+id/back_flashlight" android:layout_width="150dp" android:layout_height="60dp" android:layout_marginTop="10dp" android:text="@string/test_flashlight_back"/>
+            <Button android:textSize="25dp" android:id="@+id/front_flashlight" android:layout_width="150dp" android:layout_height="60dp" android:layout_marginTop="10dp" android:text="@string/test_flashlight_front"/>
+        </LinearLayout>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/flashlight_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

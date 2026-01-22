@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="#ff383838" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="30dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/test_sim_signal_strength"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/sim1_signal_layout_id" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:text="@string/test_sim1_signal_strength" style="@style/battery_style_1"/>
+            <TextView android:id="@+id/sim1_signal_strength_id" style="@style/battery_style_2"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/sim2_signal_layout_id" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:text="@string/test_sim2_signal_strength" style="@style/battery_style_1"/>
+            <TextView android:id="@+id/sim2_signal_strength_id" style="@style/battery_style_2"/>
+        </LinearLayout>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/simsignal_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

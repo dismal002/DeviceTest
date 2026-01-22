@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/sensor_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <TextView android:textSize="18sp" android:id="@+id/text_sensor_type" android:paddingTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_type"/>
+        <TextView android:textSize="18sp" android:id="@+id/text_current" android:paddingTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_current"/>
+        <TextView android:textSize="18sp" android:id="@+id/text_threshold" android:paddingTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_threshold"/>
+        <TextView android:textSize="18sp" android:id="@+id/text_threshold_reset" android:paddingTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_set_threshold"/>
+        <Button android:gravity="center" android:id="@+id/threshold_set_btn" android:layout_width="150dp" android:layout_height="wrap_content" android:text="@string/test_sensor_reset"/>
+        <TextView android:textSize="18sp" android:textColor="@color/orange" android:id="@+id/text_xyz" android:layout_width="wrap_content" android:layout_height="25dp" android:text="@string/test_sensor_xyz"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/img_arrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:src="@drawable/arrow"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/img_compass" android:paddingTop="20dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/compass"/>
+        <TextView android:textSize="18sp" android:textColor="@color/orange" android:id="@+id/text_precision" android:paddingTop="20dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_light"/>
+        <TextView android:textSize="18sp" android:textColor="@color/orange" android:id="@+id/text_light_level" android:paddingTop="20dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_light_level"/>
+        <TextView android:textSize="18sp" android:textColor="@color/orange" android:id="@+id/text_distance" android:paddingTop="20dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_distance"/>
+        <TextView android:textSize="18sp" android:id="@+id/text_info" android:paddingTop="20dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_sensor_tips"/>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/sensor_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="left" android:orientation="vertical" android:id="@+id/all_result" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textColor="@color/green" android:id="@+id/result_ok" android:visibility="gone" style="@style/result_text"/>
+            <View android:id="@+id/result_sep" android:background="@color/gray" android:visibility="gone" android:layout_width="match_parent" android:layout_height="1dp"/>
+            <TextView android:textColor="@color/red" android:id="@+id/result_fail" android:visibility="gone" style="@style/result_text"/>
+            <Button android:id="@+id/test_factoryreset_auto" android:text="@string/but_factoryreset" style="@style/main_button_style"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

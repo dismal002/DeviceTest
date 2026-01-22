@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/bk_bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <SeekBar android:id="@+id/bk_seek" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginBottom="20dp" android:max="235" android:progress="102"/>
+    </LinearLayout>
+    <com.dismal.devicetest.ui.TestConfirm android:id="@+id/backlight_confirm" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

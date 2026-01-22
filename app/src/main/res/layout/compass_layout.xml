@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:background="@mipmap/background" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:id="@+id/view_compass" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textSize="36px" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@+id/textview_altitude" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50px" android:text="@string/getting_location"/>
+            <TextView android:textSize="36px" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@+id/textview_pressure" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20px" android:text="@string/getting_location"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="50px">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <FrameLayout android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/background_compass"/>
+                        <com.dismal.devicetest.CompassView android:layout_gravity="center" android:id="@+id/compass_pointer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/compass"/>
+                        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/cover"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60px" android:src="@mipmap/prompt"/>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="26px">
+                    <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@+id/layout_direction" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <ImageView android:layout_width="20dp" android:layout_height="match_parent"/>
+                    <LinearLayout android:gravity="left" android:orientation="horizontal" android:id="@+id/layout_angle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                <com.dismal.devicetest.ui.TestConfirm android:id="@+id/compass_confirm" android:layout_width="240dp" android:layout_height="wrap_content"/>
+                <Button android:gravity="center" android:id="@+id/confirm_btn_adjust" android:layout_width="120dp" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/btn_adjust"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
