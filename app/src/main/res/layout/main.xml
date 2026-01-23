@@ -47,26 +47,20 @@
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <Button android:id="@+id/test_mic" android:text="@string/but_test_mic" style="@style/main_button_style"/>
                 <Button android:id="@+id/test_fm" android:text="@string/but_test_fm" style="@style/main_button_style"/>
-                <Button android:id="@+id/test_led" android:visibility="gone" android:text="@+string/but_test_led" style="@style/main_button_style"/>
+                <Button android:id="@+id/test_handwriting" android:text="@string/TouchScreen_HandWriting" style="@style/main_button_style"/>
             </LinearLayout>
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <Button android:id="@+id/test_finger" android:visibility="gone" android:text="@string/but_test_finger" style="@style/main_button_style"/>
                 <Button android:id="@+id/test_nfc" android:visibility="gone" android:text="@string/but_test_nfc" style="@style/main_button_style"/>
-                <Button android:id="@+id/test_rgb_leds" android:visibility="gone" android:text="@+string/but_test_rgb_leds" style="@style/main_button_style"/>
-            </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <Button android:id="@+id/test_otg" android:text="@string/test_otg" style="@style/main_button_style"/>
                 <Button android:id="@+id/test_cmpass" android:text="@string/but_test_compass" style="@style/main_button_style"/>
-                <Button android:visibility="invisible" style="@style/main_button_style"/>
+                <Button android:id="@+id/test_export_pdf" android:text="Export" style="@style/main_button_style"/>
             </LinearLayout>
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <Button android:id="@+id/test_tee" android:visibility="gone" android:text="@string/but_test_tee" style="@style/main_button_style"/>
             </LinearLayout>
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <Button android:id="@+id/test_tee_02" android:visibility="gone" android:text="@string/but_test_tee_02" style="@style/main_button_style"/>
-            </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <Button android:id="@+id/test_factoryreset" android:text="@string/but_factoryreset" style="@style/main_button_style"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

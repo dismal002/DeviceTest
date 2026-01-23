@@ -2,24 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="#ffffffff">
 
     <FrameLayout
-        android:id="@+id/touchpanel_container"
+        android:id="@+id/canvas_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/confirm_layout">
-
-        <android.gesture.GestureOverlayView
-            android:id="@+id/gestures_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gestureStrokeType="multiple" />
-    </FrameLayout>
+        android:layout_above="@+id/confirm_layout" />
 
     <com.dismal.devicetest.ui.TestConfirm
         android:id="@+id/confirm_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

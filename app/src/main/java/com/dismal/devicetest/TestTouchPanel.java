@@ -18,7 +18,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AbsoluteLayout;
+import android.view.ViewGroup;
 import com.dismal.devicetest.ui.TestConfirm;
 
 public class TestTouchPanel extends TestUnitActivity {
@@ -58,16 +58,21 @@ public class TestTouchPanel extends TestUnitActivity {
     }
 
     private void initView() {
-        this.mConfirm = new TestConfirm(this);
-        this.mConfirm.setTestConfirm(this, TestTouchPanel.class, "TestTouchPanel", this.mMode, (String) null, (String) null, false);
+        this.mConfirm = (TestConfirm) findViewById(R.id.confirm_layout);
+        if (this.mConfirm != null) {
+            this.mConfirm.setTestConfirm(this, TestTouchPanel.class, "TestTouchPanel", this.mMode, (String) null, (String) null, false);
+        }
+        
         this.mTouchPot = BitmapFactory.decodeResource(getResources(), R.drawable.touch_pot);
-        this.bit_width = this.mTouchPot.getWidth();
-        this.bit_height = this.mTouchPot.getHeight();
+        this.bit_width = this.mTouchPot != null ? this.mTouchPot.getWidth() : 0;
+        this.bit_height = this.mTouchPot != null ? this.mTouchPot.getHeight() : 0;
+        
         initGesture();
-        AbsoluteLayout absoluteLayout = (AbsoluteLayout) findViewById(R.id.touchpanelview_layout);
+        ViewGroup container = (ViewGroup) findViewById(R.id.touchpanel_container);
         this.mPanelView = new TouchPanelView(this);
-        absoluteLayout.addView(this.mPanelView);
-        absoluteLayout.invalidate();
+        if (container != null) {
+            container.addView(this.mPanelView, 0); // Add behind gesture overlay
+        }
     }
 
     /* access modifiers changed from: private */

@@ -30,7 +30,8 @@
         android:icon="@drawable/ic_launcher"
         android:allowBackup="true"
         android:extractNativeLibs="false"
-        android:usesNonSdkApi="true">
+        android:usesNonSdkApi="true"
+        android:requestLegacyExternalStorage="true">
         
         <activity
             android:theme="@style/AppTheme"
@@ -295,16 +296,6 @@
             </intent-filter>
         </activity>
         
-        <activity
-            android:name="com.dismal.devicetest.TestLED"
-            android:screenOrientation="portrait"
-            android:exported="true"
-            android:configChanges="locale">
-            <intent-filter>
-                <action android:name="com.devicetest.testled" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         
         <activity
             android:name="com.dismal.devicetest.TestNFC"
@@ -349,16 +340,6 @@
             </intent-filter>
         </activity>
         
-        <activity
-            android:name="com.dismal.devicetest.LedsTestActivity"
-            android:screenOrientation="portrait"
-            android:exported="true"
-            android:configChanges="locale">
-            <intent-filter>
-                <action android:name="com.devicetest.testrgbleds" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         
 
         

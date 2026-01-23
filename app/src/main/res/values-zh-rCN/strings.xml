@@ -73,7 +73,7 @@
     <string name="test_bluetooth_mess">请点击“打开Bluetooth/关闭Bluetooth”，是否有正确的Bluetooth信息！</string>
     <string name="test_bluetooth_mess_error">未知的Bluetooth状态！</string>
     <string name="menu_settings">Settings</string>
-    <string name="but_factoryreset">重置</string>
+
     <string name="title_activity_main">MainActivity</string>
     <string name="test_power_status">充电状态:</string>
     <string name="test_power_plug">Power Plug:</string>
@@ -255,10 +255,7 @@
     <string name="test_phone_112">112</string>
     <string name="test_phone_dial_sim1">卡1拨号</string>
     <string name="test_phone_dial_sim2">卡2拨号</string>
-    <string name="test_factoryreset_title">重置手机</string>
-    <string name="test_factoryreset_or_not">是否重置手机？</string>
-    <string name="test_factoryreset_ok">确定</string>
-    <string name="test_factoryreset_cancel">取消</string>
+
     <string name="but_test_signal">信号强度</string>
     <string name="but_test_current">电流测试</string>
     <string name="test_sim_signal_strength">sim卡信号强度</string>

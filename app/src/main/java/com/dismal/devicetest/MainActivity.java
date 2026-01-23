@@ -8,6 +8,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.Manifest;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioDeviceInfo;
@@ -28,9 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int[] flags = null;
     private boolean isAutoTest = false;
     private boolean[] isSuccess = new boolean[31];
+    private Button exportPdfBtn;
     private Button languageBtn;
     private LanguagePreference languagePreference;
-    private Button resetBtn;
     private BroadcastReceiver stopAutoTestReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             Log.e("lsz", "onReceive-->stopAutoTest");
@@ -54,13 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button testGravitySensor;
     private Button testHeadset;
     private Button testKeyboard;
-    private Button testLED;
     private Button testLightSensor;
     private Button testMic;
     private Button testNFC;
+    private Button testHandwriting;
     private Button testOTG;
     private Button testPannel;
-    private Button testRGBLEDS;
     private Button testSdCard;
     private Button testSim;
     private Button testSound;
@@ -82,132 +84,180 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTitle(R.string.app_name);
         this.languagePreference = new LanguagePreference(this);
         this.languageBtn = (Button) findViewById(R.id.test_languagechange);
-        this.languageBtn.setOnClickListener(this);
+        if (this.languageBtn != null) {
+            this.languageBtn.setOnClickListener(this);
+        }
         this.testAll = (Button) findViewById(R.id.test_all);
-        this.testAll.setOnClickListener(this);
+        if (this.testAll != null) {
+            this.testAll.setOnClickListener(this);
+        }
         this.testVersion = (Button) findViewById(R.id.test_version);
-        this.testVersion.setOnClickListener(this);
-        this.testBtns[0] = this.testVersion;
+        if (this.testVersion != null) {
+            this.testVersion.setOnClickListener(this);
+            this.testBtns[0] = this.testVersion;
+        }
         this.testColorBtn = (Button) findViewById(R.id.test_color);
-        this.testColorBtn.setOnClickListener(this);
-        boolean z = true;
-        this.testBtns[1] = this.testColorBtn;
+        if (this.testColorBtn != null) {
+            this.testColorBtn.setOnClickListener(this);
+            this.testBtns[1] = this.testColorBtn;
+        }
         this.testPannel = (Button) findViewById(R.id.test_touchpanel);
-        this.testPannel.setOnClickListener(this);
-        this.testBtns[2] = this.testPannel;
+        if (this.testPannel != null) {
+            this.testPannel.setOnClickListener(this);
+            this.testBtns[2] = this.testPannel;
+        }
         this.testGpsBtn = (Button) findViewById(R.id.test_gps);
-        this.testGpsBtn.setOnClickListener(this);
-        this.testBtns[3] = this.testGpsBtn;
+        if (this.testGpsBtn != null) {
+            this.testGpsBtn.setOnClickListener(this);
+            this.testBtns[3] = this.testGpsBtn;
+        }
         this.testSdCard = (Button) findViewById(R.id.test_sd);
-        this.testSdCard.setOnClickListener(this);
-        this.testBtns[4] = this.testSdCard;
+        if (this.testSdCard != null) {
+            this.testSdCard.setOnClickListener(this);
+            this.testBtns[4] = this.testSdCard;
+        }
         this.testFlashLightBtn = (Button) findViewById(R.id.test_flashlight);
-        this.testFlashLightBtn.setOnClickListener(this);
-        this.testBtns[5] = this.testFlashLightBtn;
+        if (this.testFlashLightBtn != null) {
+            this.testFlashLightBtn.setOnClickListener(this);
+            this.testBtns[5] = this.testFlashLightBtn;
+        }
         this.testCamera = (Button) findViewById(R.id.test_camera);
-        this.testCamera.setOnClickListener(this);
-        this.testBtns[6] = this.testCamera;
+        if (this.testCamera != null) {
+            this.testCamera.setOnClickListener(this);
+            this.testBtns[6] = this.testCamera;
+        }
         this.testWifi = (Button) findViewById(R.id.test_wifi);
-        this.testWifi.setOnClickListener(this);
-        this.testBtns[7] = this.testWifi;
+        if (this.testWifi != null) {
+            this.testWifi.setOnClickListener(this);
+            this.testBtns[7] = this.testWifi;
+        }
         this.testBluetooth = (Button) findViewById(R.id.test_bluetooth);
-        this.testBluetooth.setOnClickListener(this);
-        this.testBtns[8] = this.testBluetooth;
+        if (this.testBluetooth != null) {
+            this.testBluetooth.setOnClickListener(this);
+            this.testBtns[8] = this.testBluetooth;
+        }
         this.testBacklight = (Button) findViewById(R.id.test_backlight);
-        this.testBacklight.setOnClickListener(this);
-        this.testBtns[9] = this.testBacklight;
+        if (this.testBacklight != null) {
+            this.testBacklight.setOnClickListener(this);
+            this.testBtns[9] = this.testBacklight;
+        }
         this.testBattery = (Button) findViewById(R.id.test_power);
-        this.testBattery.setOnClickListener(this);
-        this.testBtns[10] = this.testBattery;
+        if (this.testBattery != null) {
+            this.testBattery.setOnClickListener(this);
+            this.testBtns[10] = this.testBattery;
+        }
         this.testKeyboard = (Button) findViewById(R.id.test_keyboard);
-        this.testKeyboard.setOnClickListener(this);
-        this.testBtns[11] = this.testKeyboard;
+        if (this.testKeyboard != null) {
+            this.testKeyboard.setOnClickListener(this);
+            this.testBtns[11] = this.testKeyboard;
+        }
         this.testEarphone = (Button) findViewById(R.id.test_earphone);
-        this.testEarphone.setOnClickListener(this);
-        this.testBtns[12] = this.testEarphone;
+        if (this.testEarphone != null) {
+            this.testEarphone.setOnClickListener(this);
+            this.testBtns[12] = this.testEarphone;
+        }
         this.testTelephone = (Button) findViewById(R.id.test_phone);
-        this.testTelephone.setOnClickListener(this);
-        this.testBtns[13] = this.testTelephone;
+        if (this.testTelephone != null) {
+            this.testTelephone.setOnClickListener(this);
+            this.testBtns[13] = this.testTelephone;
+        }
         this.testVibrateBtn = (Button) findViewById(R.id.test_vibrate);
-        this.testVibrateBtn.setOnClickListener(this);
-        this.testBtns[14] = this.testVibrateBtn;
+        if (this.testVibrateBtn != null) {
+            this.testVibrateBtn.setOnClickListener(this);
+            this.testBtns[14] = this.testVibrateBtn;
+        }
         this.testGravitySensor = (Button) findViewById(R.id.test_gravity_sensor);
-        this.testGravitySensor.setOnClickListener(this);
-        this.testBtns[15] = this.testGravitySensor;
+        if (this.testGravitySensor != null) {
+            this.testGravitySensor.setOnClickListener(this);
+            this.testBtns[15] = this.testGravitySensor;
+        }
         this.testLightSensor = (Button) findViewById(R.id.test_light_sensor);
-        this.testLightSensor.setOnClickListener(this);
-        Button[] buttonArr = this.testBtns;
-        buttonArr[16] = this.testLightSensor;
-        buttonArr[16].setVisibility(8);
+        if (this.testLightSensor != null) {
+            this.testLightSensor.setOnClickListener(this);
+            this.testBtns[16] = this.testLightSensor;
+            this.testBtns[16].setVisibility(0);
+        }
         this.testDistanceSensor = (Button) findViewById(R.id.test_distance_sensor);
-        this.testDistanceSensor.setOnClickListener(this);
-        this.testBtns[17] = this.testDistanceSensor;
+        if (this.testDistanceSensor != null) {
+            this.testDistanceSensor.setOnClickListener(this);
+            this.testBtns[17] = this.testDistanceSensor;
+        }
         this.testSim = (Button) findViewById(R.id.test_sim);
-        this.testSim.setOnClickListener(this);
-        this.testBtns[18] = this.testSim;
+        if (this.testSim != null) {
+            this.testSim.setOnClickListener(this);
+            this.testBtns[18] = this.testSim;
+        }
         this.testSound = (Button) findViewById(R.id.test_speaker);
-        this.testSound.setOnClickListener(this);
-        this.testBtns[19] = this.testSound;
+        if (this.testSound != null) {
+            this.testSound.setOnClickListener(this);
+            this.testBtns[19] = this.testSound;
+        }
         this.testHeadset = (Button) findViewById(R.id.test_headset);
-        this.testHeadset.setOnClickListener(this);
-        this.testBtns[20] = this.testHeadset;
+        if (this.testHeadset != null) {
+            this.testHeadset.setOnClickListener(this);
+            this.testBtns[20] = this.testHeadset;
+        }
         this.testMic = (Button) findViewById(R.id.test_mic);
-        this.testMic.setOnClickListener(this);
-        this.testBtns[21] = this.testMic;
+        if (this.testMic != null) {
+            this.testMic.setOnClickListener(this);
+            this.testBtns[21] = this.testMic;
+        }
         this.testFMRadio = (Button) findViewById(R.id.test_fm);
-        this.testFMRadio.setOnClickListener(this);
-        this.testBtns[22] = this.testFMRadio;
-        this.testLED = (Button) findViewById(R.id.test_led);
-        this.testLED.setOnClickListener(this);
-        Button[] buttonArr2 = this.testBtns;
-        Button button = this.testLED;
-        buttonArr2[23] = button;
-        button.setVisibility(8); // LED test hidden by default
+        if (this.testFMRadio != null) {
+            this.testFMRadio.setOnClickListener(this);
+            this.testBtns[22] = this.testFMRadio;
+        }
+        this.testHandwriting = (Button) findViewById(R.id.test_handwriting);
+        if (this.testHandwriting != null) {
+            this.testHandwriting.setOnClickListener(this);
+            this.testBtns[23] = this.testHandwriting;
+        }
         
         this.testNFC = (Button) findViewById(R.id.test_nfc);
-        this.testNFC.setOnClickListener(this);
-        Button[] buttonArr3 = this.testBtns;
-        buttonArr3[24] = this.testNFC;
-        
-        // Ensure NFC is visible if hardware is present
-        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC)) {
-            buttonArr3[24].setVisibility(View.VISIBLE);
-        } else {
-            buttonArr3[24].setVisibility(View.GONE);
+        if (this.testNFC != null) {
+            this.testNFC.setOnClickListener(this);
+            this.testBtns[24] = this.testNFC;
+            if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC)) {
+                this.testBtns[24].setVisibility(View.VISIBLE);
+            } else {
+                this.testBtns[24].setVisibility(View.GONE);
+            }
         }
-        this.testRGBLEDS = (Button) findViewById(R.id.test_rgb_leds);
-        this.testRGBLEDS.setOnClickListener(this);
-        this.testBtns[25] = this.testRGBLEDS;
-        this.testRGBLEDS.setVisibility(8); // RGB LEDs hidden by default
         
         this.testOTG = (Button) findViewById(R.id.test_otg);
-        this.testOTG.setOnClickListener(this);
-        Button[] buttonArr4 = this.testBtns;
-        buttonArr4[26] = this.testOTG;
-        buttonArr4[26].setVisibility(8); // OTG hidden by default
+        if (this.testOTG != null) {
+            this.testOTG.setOnClickListener(this);
+            this.testBtns[26] = this.testOTG;
+            this.testBtns[26].setVisibility(0); // OTG visible by default
+        }
         this.testCompass = (Button) findViewById(R.id.test_cmpass);
-        this.testCompass.setOnClickListener(this);
-        Button[] buttonArr5 = this.testBtns;
-        buttonArr5[27] = this.testCompass;
-        buttonArr5[27].setVisibility(8); // Compass hidden by default
+        if (this.testCompass != null) {
+            this.testCompass.setOnClickListener(this);
+            this.testBtns[27] = this.testCompass;
+            this.testBtns[27].setVisibility(0); // Compass visible by default
+        }
         
         this.testTEE = (Button) findViewById(R.id.test_tee);
-        this.testTEE.setOnClickListener(this);
-        Button[] buttonArr6 = this.testBtns;
-        buttonArr6[28] = this.testTEE;
-        buttonArr6[28].setVisibility(8); // TEE hidden by default
+        if (this.testTEE != null) {
+            this.testTEE.setOnClickListener(this);
+            this.testBtns[28] = this.testTEE;
+            this.testTEE.setVisibility(8); // TEE missing implementation
+        }
         
         this.testTEE_02 = (Button) findViewById(R.id.test_tee_02);
-        this.testTEE_02.setOnClickListener(this);
-        Button[] buttonArr7 = this.testBtns;
-        buttonArr7[29] = this.testTEE_02;
-        buttonArr7[29].setVisibility(8); // TEE_02 hidden by default
+        if (this.testTEE_02 != null) {
+            this.testTEE_02.setOnClickListener(this);
+            this.testBtns[29] = this.testTEE_02;
+            this.testTEE_02.setVisibility(8); // TEE_02 missing implementation
+        }
         
         // Hardware detection for earphone and FM radio
         detectAndConfigureHardware();
         
-        this.resetBtn = (Button) findViewById(R.id.test_factoryreset);
-        this.resetBtn.setOnClickListener(this);
+        this.exportPdfBtn = (Button) findViewById(R.id.test_export_pdf);
+        if (this.exportPdfBtn != null) {
+            this.exportPdfBtn.setOnClickListener(this);
+        }
         registerReceiver(this.stopAutoTestReceiver, new IntentFilter("android.intent.action.STOP_AUTO_TEST"));
     }
 
@@ -326,7 +376,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.e("lsz", "--->onclick-->test_all");
             this.testBtns[0].performClick();
             Log.e("lsz", "--->testBtns[0].performClick();");
-        } else if (id != R.id.test_factoryreset) {
+        } else if (id == R.id.test_export_pdf) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                // On Android 10+ (API 29+), we use MediaStore or legacy mode and don't need runtime permissions for this
+                exportReport();
+            } else {
+                String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+                if (CheckPermissions(permissions)) {
+                    exportReport();
+                } else {
+                    requestPermissionsInternal(permissions, 1001);
+                }
+            }
+        } else {
+            // Test activities
             switch (id) {
                 case R.id.test_version /*2131296277*/:
                     intent.setAction("com.devicetest.testversion");
@@ -336,7 +399,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent.setAction("com.devicetest.testcolor");
                     i = 12;
                     break;
-
                 case R.id.test_touchpanel /*2131296279*/:
                     if (!FactoryConstants.TESTTOUCHPANELGRID) {
                         intent.setAction("com.devicetest.testtouchpannel");
@@ -440,71 +502,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent.setAction("com.devicetest.testphone");
                     i = 52;
                     break;
-                default:
-                    switch (id) {
-                        case R.id.test_cmpass /*2131296533*/:
-                            intent.setAction("com.devicetest.testcompass");
-                            i = 88;
-                            break;
-
-                        case R.id.test_led /*2131296535*/:
-                            intent.setAction("com.devicetest.testled");
-                            i = 83;
-                            break;
-                        case R.id.test_nfc /*2131296536*/:
-                            intent.setAction("com.devicetest.testnfc");
-                            i = 85;
-                            break;
-                        case R.id.test_otg /*2131296537*/:
-                            intent.setAction("com.devicetest.test_otg");
-                            i = 87;
-                            break;
-                        case R.id.test_rgb_leds /*2131296538*/:
-                            intent.setAction("com.devicetest.testrgbleds");
-                            i = 86;
-                            break;
-                        case R.id.test_tee /*2131296539*/:
-                            intent.setAction("com.devicetest.test_tee");
-                            i = 89;
-                            break;
-                        case R.id.test_tee_02 /*2131296540*/:
-                            intent.setAction("com.devicetest.test_tee_02");
-                            i = 90;
-                            break;
-                    }
+                case R.id.test_cmpass /*2131296533*/:
+                    intent.setAction("com.devicetest.testcompass");
+                    i = 88;
+                    break;
+                case R.id.test_handwriting:
+                    intent.setClass(this, TsHandWriting.class);
+                    i = 83;
+                    break;
+                case R.id.test_nfc /*2131296536*/:
+                    intent.setAction("com.devicetest.testnfc");
+                    i = 85;
+                    break;
+                case R.id.test_otg /*2131296537*/:
+                    intent.setAction("com.devicetest.test_otg");
+                    i = 87;
+                    break;
+                case R.id.test_tee /*2131296539*/:
+                    intent.setAction("com.devicetest.test_tee");
+                    i = 89;
+                    break;
+                case R.id.test_tee_02 /*2131296540*/:
+                    intent.setAction("com.devicetest.test_tee_02");
+                    i = 90;
+                    break;
             }
-        } else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.test_factoryreset_title);
-            builder.setMessage(R.string.test_factoryreset_or_not);
-            builder.setPositiveButton(R.string.test_factoryreset_ok, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Log.d("liuzhicheng", "test_factoryreset_ok  onClick");
-                    // Factory reset requires system app or user action
-                    // Direct user to Settings instead
-                    Intent intent = new Intent(android.provider.Settings.ACTION_PRIVACY_SETTINGS);
-                    try {
-                        MainActivity.this.startActivity(intent);
-                        android.widget.Toast.makeText(MainActivity.this, 
-                            "Please use Settings > System > Reset options to perform factory reset", 
-                            android.widget.Toast.LENGTH_LONG).show();
-                    } catch (Exception e) {
-                        android.util.Log.e("MainActivity", "Cannot open settings", e);
-                        android.widget.Toast.makeText(MainActivity.this, 
-                            "Factory reset requires system privileges. Please use device Settings.", 
-                            android.widget.Toast.LENGTH_LONG).show();
-                    }
-                }
-            }).setNegativeButton(R.string.test_factoryreset_cancel, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialogInterface, int i) {
-                }
-            });
-            builder.show();
         }
+        
         Log.e("lsz", "--->requestCode-->" + i);
         if (i != 0) {
             intent.putExtra("autotest", this.isAutoTest);
-            startActivityForResult(intent, i);
+            try {
+                startActivityForResult(intent, i);
+            } catch (Exception e) {
+                Log.e("MainActivity", "Failed to start activity for action " + intent.getAction(), e);
+                Toast.makeText(this, "Test implementation not found", Toast.LENGTH_SHORT).show();
+                if (this.isAutoTest) {
+                    // Skip to next test if in auto mode
+                    onActivityResult(i, 0, null);
+                }
+            }
         }
     }
 
@@ -533,7 +570,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 targetBtn2++;
                 Button button = this.testBtns[targetBtn2];
-                if (button.getVisibility() == 0) {
+                if (button != null && button.getVisibility() == 0) {
                     button.performClick();
                     return;
                 }
@@ -627,14 +664,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                                                         this.targetBtn = this.testFMRadio;
                                                                         return 22;
                                                                     case 83:
-                                                                        this.targetBtn = this.testLED;
+                                                                        this.targetBtn = this.testHandwriting;
                                                                         return 23;
 
                                                                     case 85:
                                                                         this.targetBtn = this.testNFC;
                                                                         return 25;
                                                                     case 86:
-                                                                        this.targetBtn = this.testRGBLEDS;
+                                                                        // this.targetBtn = this.testRGBLEDS;
                                                                         return 26;
                                                                     case 87:
                                                                         this.targetBtn = this.testOTG;
@@ -657,6 +694,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 }
                         }
                 }
+        }
+    }
+
+    private void exportReport() {
+        TestReportExporter exporter = new TestReportExporter(this);
+        String filePath = exporter.exportResults(testBtns, flags);
+        if (filePath != null) {
+            Toast.makeText(this, "Report exported to: " + filePath, Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Failed to export report", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean CheckPermissions(String[] permissions) {
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void requestPermissionsInternal(String[] permissions, int requestCode) {
+        ActivityCompat.requestPermissions(this, permissions, requestCode);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1001) {
+            boolean allGranted = true;
+            for (int result : grantResults) {
+                if (result != PackageManager.PERMISSION_GRANTED) {
+                    allGranted = false;
+                    break;
+                }
+            }
+            if (allGranted) {
+                exportReport();
+            } else {
+                Toast.makeText(this, "Storage permission is required to export PDF", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

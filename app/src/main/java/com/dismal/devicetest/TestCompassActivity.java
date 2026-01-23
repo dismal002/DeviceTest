@@ -104,7 +104,9 @@ public class TestCompassActivity extends TestUnitActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.compass_layout);
-        getActionBar().hide();
+        if (getActionBar() != null) {
+            getActionBar().hide();
+        }
         initResources();
         initServices();
         this.mConfirm = (TestConfirm) findViewById(R.id.compass_confirm);

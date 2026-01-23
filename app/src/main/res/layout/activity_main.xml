@@ -34,7 +34,7 @@
             <Button android:id="@+id/test_phone" android:text="@string/but_test_phone" style="@style/main_button_style"/>
             <Button android:id="@+id/test_signal" android:text="@string/but_test_signal" style="@style/main_button_style"/>
             <Button android:id="@+id/test_imei" android:text="@string/but_test_imei" style="@style/main_button_style"/>
-            <Button android:id="@+id/test_factoryreset" android:text="@string/but_factoryreset" style="@style/main_button_style"/>
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -5,7 +5,7 @@
             <TextView android:textColor="@color/green" android:id="@+id/result_ok" android:visibility="gone" style="@style/result_text"/>
             <View android:id="@+id/result_sep" android:background="@color/gray" android:visibility="gone" android:layout_width="match_parent" android:layout_height="1dp"/>
             <TextView android:textColor="@color/red" android:id="@+id/result_fail" android:visibility="gone" style="@style/result_text"/>
-            <Button android:id="@+id/test_factoryreset_auto" android:text="@string/but_factoryreset" style="@style/main_button_style"/>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

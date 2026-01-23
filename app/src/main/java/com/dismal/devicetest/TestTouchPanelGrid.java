@@ -114,8 +114,9 @@ public class TestTouchPanelGrid extends TestUnitActivity {
             this.mTargetPaint.setARGB(255, 0, 0, 0);
             this.mTargetPaint.setStyle(Paint.Style.STROKE);
             this.mTargetPaint.setStrokeWidth(2.0f);
-            int unused = TestTouchPanelGrid.this.screenWidth = context.getResources().getDisplayMetrics().widthPixels;
-            int unused2 = TestTouchPanelGrid.this.screenHeight = context.getResources().getDisplayMetrics().heightPixels;
+            DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+            int unused = TestTouchPanelGrid.this.screenWidth = metrics.widthPixels;
+            int unused2 = TestTouchPanelGrid.this.screenHeight = metrics.heightPixels;
             Log.d("qsl", "======MyView=====" + TestTouchPanelGrid.this.screenWidth + "===" + TestTouchPanelGrid.this.screenHeight + "===" + (TestTouchPanelGrid.this.screenHeight / 30));
             if (TestTouchPanelGrid.this.screenWidth == 480) {
                 int unused3 = TestTouchPanelGrid.this.RECT_HEIGHT = 30;
@@ -233,8 +234,19 @@ public class TestTouchPanelGrid extends TestUnitActivity {
         super.onCreate(bundle);
         requestWindowFeature(1);
         getWindow().setFlags(1024, 1024);
+        setContentView(R.layout.test_touchpanel);
+        
+        com.dismal.devicetest.ui.TestConfirm confirm = (com.dismal.devicetest.ui.TestConfirm) findViewById(R.id.confirm_layout);
+        if (confirm != null) {
+            confirm.setTestConfirm(this, TestTouchPanelGrid.class, "TestTouchPanelGrid", "", (String) null, (String) null, false);
+        }
+
         this.v = new MyView(this);
-        setContentView(this.v);
+        ViewGroup container = (ViewGroup) findViewById(R.id.touchpanel_container);
+        if (container != null) {
+            container.addView(this.v);
+        }
+        
         initDate();
         initRectFill();
     }

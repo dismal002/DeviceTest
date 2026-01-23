@@ -157,18 +157,27 @@ public class TestSensor extends TestUnitActivity implements SensorEventListener 
         super.onResume();
         startTimer();
         int i = this.sensor_type;
-        if (i == 0) {
-            SensorManager sensorManager = this.mSensorManager;
-            sensorManager.registerListener(this, sensorManager.getDefaultSensor(1), 1);
-        } else if (i == 1) {
-            SensorManager sensorManager2 = this.mSensorManager;
-            sensorManager2.registerListener(this, sensorManager2.getDefaultSensor(1), 1);
+        if (i == 0 || i == 1) {
+            Sensor sensor = this.mSensorManager.getDefaultSensor(1);
+            if (sensor != null) {
+                this.mSensorManager.registerListener(this, sensor, 1);
+            } else {
+                this.xyz_text.setText("Gravity Sensor not found");
+            }
         } else if (i == 2) {
-            SensorManager sensorManager3 = this.mSensorManager;
-            sensorManager3.registerListener(this, sensorManager3.getDefaultSensor(5), 0);
+            Sensor sensor = this.mSensorManager.getDefaultSensor(5);
+            if (sensor != null) {
+                this.mSensorManager.registerListener(this, sensor, 0);
+            } else {
+                this.precision_text.setText("Light Sensor not found");
+            }
         } else if (i == 3) {
-            SensorManager sensorManager4 = this.mSensorManager;
-            sensorManager4.registerListener(this, sensorManager4.getDefaultSensor(8), 1);
+            Sensor sensor = this.mSensorManager.getDefaultSensor(8);
+            if (sensor != null) {
+                this.mSensorManager.registerListener(this, sensor, 1);
+            } else {
+                this.distance_text.setText("Distance Sensor not found");
+            }
         }
     }
 
@@ -233,8 +242,13 @@ public class TestSensor extends TestUnitActivity implements SensorEventListener 
             this.mSensorLayout.addView(this.info_text);
             this.info_text.setText(R.string.test_sensor_putinabove2);
             this.distanceSensor = this.mSensorManager.getDefaultSensor(8);
-            this.distanceSensor.getVersion();
-            Log.e("lsz", "sensor vendor-->" + this.distanceSensor.getVendor() + " sensor version-->" + this.distanceSensor.getVersion());
+            if (this.distanceSensor != null) {
+                this.distanceSensor.getVersion();
+                Log.e("lsz", "sensor vendor-->" + this.distanceSensor.getVendor() + " sensor version-->" + this.distanceSensor.getVersion());
+            } else {
+                Log.e("lsz", "distanceSensor is null");
+                this.distance_text.setText("Sensor Unavailable");
+            }
             this.mSensorLayout.addView(this.distance_text);
             this.distance_text.setVisibility(0);
         } else if (str.equals("type_gravity")) {
@@ -254,7 +268,10 @@ public class TestSensor extends TestUnitActivity implements SensorEventListener 
             this.compassImageView.setVisibility(0);
             this.mConfirm.setTestConfirm(this, TestSensor.class, "MagneticSensor", this.mMode, "sensor_type", "type_magnetic");
             this.info_text.setText(getResources().getString(R.string.test_sensor_znzshow));
-            this.mSensorManager.getDefaultSensor(3);
+            Sensor magneticSensor = this.mSensorManager.getDefaultSensor(3);
+            if (magneticSensor == null) {
+                Log.e("lsz", "magneticSensor is null");
+            }
         } else if (str.equals("type_light")) {
             this.sensor_type = 2;
             setTitle(R.string.but_test_light_sensor);

@@ -80,7 +80,7 @@
     <string name="test_bluetooth_mess">Click“Open Bluetooth/Close Bluetooth”to test！</string>
     <string name="test_bluetooth_mess_error">Unkown Bluetooth state！</string>
     <string name="menu_settings">Settings</string>
-    <string name="but_factoryreset">Reset</string>
+
     <string name="title_activity_main">MainActivity</string>
     <string name="test_power_status">Power State:</string>
     <string name="test_power_plug">Power Plug:</string>
@@ -262,10 +262,7 @@
     <string name="test_phone_112">112</string>
     <string name="test_phone_dial_sim1">Sim 1 Dial</string>
     <string name="test_phone_dial_sim2">Sim 2 Dial</string>
-    <string name="test_factoryreset_title">Reset phone</string>
-    <string name="test_factoryreset_or_not">Reset phone or not ?</string>
-    <string name="test_factoryreset_ok">OK</string>
-    <string name="test_factoryreset_cancel">Cancel</string>
+
     <string name="but_test_signal">SimSignal</string>
     <string name="but_test_current">Current</string>
     <string name="test_sim_signal_strength">SimSignal</string>
@@ -276,7 +273,7 @@
     <string name="test_dBm_unit"> dBm</string>
     <string name="test_asu_unit"> asu</string>
     <string name="but_languagechange">En/中文</string>
-    <string name="TouchScreen_HandWriting">TouchScreen_HandWriting</string>
+    <string name="TouchScreen_HandWriting">Handwriting</string>
     <string name="altitude">Altitude: %d m</string>
     <string name="android_version">Android version:</string>
     <string name="base_version">Base version:</string>

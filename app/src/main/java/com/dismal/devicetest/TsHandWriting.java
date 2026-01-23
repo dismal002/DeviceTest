@@ -15,8 +15,12 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.dismal.devicetest.ui.TestConfirm;
+import android.widget.FrameLayout;
+
 public class TsHandWriting extends AppCompatActivity {
     MyView mView = null;
+    TestConfirm mConfirm = null;
     /* access modifiers changed from: private */
     public int mZoom = 1;
 
@@ -26,9 +30,21 @@ public class TsHandWriting extends AppCompatActivity {
         Log.v("@M_EM/TouchScreen/HW", "onCreate start");
         getWindow().setFlags(1024, 1024);
         requestWindowFeature(1);
+        setContentView(R.layout.test_handwriting);
+        
         this.mView = new MyView(this);
         this.mView.setSystemUiVisibility(4096);
-        setContentView(this.mView);
+        
+        FrameLayout container = (FrameLayout) findViewById(R.id.canvas_container);
+        if (container != null) {
+            container.addView(this.mView);
+        }
+        
+        this.mConfirm = (TestConfirm) findViewById(R.id.confirm_layout);
+        if (this.mConfirm != null) {
+            this.mConfirm.setTestConfirm(this, TsHandWriting.class, "handwriting", "", (String) null, "");
+        }
+        
         Log.v("@M_EM/TouchScreen/HW", "onCreate success");
     }
 
